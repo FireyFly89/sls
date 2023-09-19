@@ -1,0 +1,39 @@
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: @primary-font;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    &.hidden {
+        overflow: hidden;
+    }
+}
+
+a {
+    display: inline-block;
+    text-decoration: none;
+    color: @primary-color;
+    transition: color @transition-fast-ease;
+}
+
+img {
+    max-width: 100%;
+
+    &.svg {
+        position: absolute;
+        z-index: -1;
+        width: 0;
+        height: 0;
+    }
+}
+
+button {
+    cursor: pointer;
+}
+
+input, select, textarea, button, a, .slick-slide {
+    outline: none;
+}

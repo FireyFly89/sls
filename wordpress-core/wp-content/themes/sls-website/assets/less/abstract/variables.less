@@ -1,0 +1,76 @@
+// variable structure to follow: @{element-name}-{type}-{modifier}: value(s);
+// Paths (relative to style.css)
+@path-fonts: "./assets/fonts/";
+@path-images: "./assets/images";
+
+// Colours
+@primary-color: #dd2b57;
+@dark-color: #1a1a1a;
+
+// Sizes
+@wrapper-width: 1140px;
+@header-height: 57.45px;
+@section-padding-top: 60px;
+@section-padding-bottom: 15px;
+@floated-img-offset: 190px;
+@floated-img-width: 360px;
+@floated-img-height: var(--floated-img-height);
+@floated-content-maxwidth: var(--floated-content-maxwidth);
+@list-img-height: 240px;
+@featured-list-img-height: 240px;
+@about-us-img-min-height: 320px;
+@products-img-height: var(--products-img-height);
+@hero-height: 240px;
+@home-hero-min-height: 512px;
+@blog-list-content-height: 280px;
+
+// Font families
+@primary-font: 'Roboto', sans-serif;
+@heading-font: 'Saira Extra Condensed', sans-serif;
+@cta-font: 'Roboto Condensed', sans-serif;
+
+
+// Single Article / Page
+@article-figure-height: var(--article-figure-height);
+
+// Animation timings
+@transition-fast-ease: 300ms ease;
+@transition-medium-ease: 500ms ease;
+@transition-slow-ease: 800ms ease;
+@transition-lazy-ease: 1400ms ease;
+
+// Media query sizes
+@hd-device-res: 1600px; // desktop 3
+@hdReady-device-res: 1366px; // desktop 2
+@large-device-res: 1200px; // desktop 1
+@medium-device-res: 992px; // tablet
+@small-device-res: 768px; // mobile 1
+@extraSmall-device-res: 480px; // mobile 2
+@old-device-res: 375px; // mobile 3 (iphone 6, etc)
+
+// Media query shorthands (mobile first only)
+@query-min-hd: ~"(min-width: @{hd-device-res})";
+@query-min-hdReady: ~"(min-width: @{hdReady-device-res})";
+@query-min-largeDevice: ~"(min-width: @{large-device-res})";
+@query-min-mediumDevice: ~"(min-width: @{medium-device-res})";
+@query-min-smallDevice: ~"(min-width: @{small-device-res})";
+@query-min-extraSmallDevice: ~"(min-width: @{extraSmall-device-res})";
+@query-min-oldDevice: ~"(min-width: @{old-device-res})";
+
+// Global CSS variables for simpler responsivity
+:root {
+    --floated-img-height: 225px;
+    --floated-content-maxwidth: 260px;
+    --products-img-height: 225px;
+    --article-figure-height: 220px;
+
+    @media @query-min-smallDevice {
+        --floated-img-height: 440px;
+        --products-img-height: 440px;
+        --article-figure-height: 745px;
+    }
+
+    @media @query-min-mediumDevice {
+        --floated-content-maxwidth: 330px;
+    }
+}

@@ -1,0 +1,152 @@
+.fa-icons {
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    font-size: 20px;
+    transition: transform @transition-medium-ease, color @transition-medium-ease;
+
+    .fab {
+        font-family: "Font Awesome 5 Brands";
+    }
+
+    .fas {
+        font-family: "Font Awesome 5 Pro";
+    }
+
+    .chevron {
+        content: "\f054";
+        font-weight: 900;
+
+        .right:extend(.fa-icons, .fa-icons .fas, .fa-icons .chevron) {
+        }
+
+        .up:extend(.fa-icons, .fa-icons .fas, .fa-icons .chevron) {
+            transform: rotateZ(-90deg);
+        }
+
+        .down:extend(.fa-icons, .fa-icons .fas, .fa-icons .chevron) {
+            transform: rotateZ(90deg);
+        }
+
+        .left:extend(.fa-icons, .fa-icons .fas, .fa-icons .chevron) {
+            transform: rotateZ(-180deg);
+        }
+    }
+
+    .shopping-cart:extend(.fa-icons, .fa-icons .fas) {
+        content: "\f07a";
+        font-weight: 900;
+    }
+
+    .youtube:extend(.fa-icons, .fa-icons .fab) {
+        content: "\f167";
+        font-weight: 900;
+    }
+
+    .newspaper:extend(.fa-icons, .fa-icons .fas) {
+        content: "\f1ea";
+        font-weight: 900;
+    }
+}
+
+.sliderArrow {
+    .slick-arrow {
+        display: block;
+        position: absolute;
+        z-index: 1;
+        font-size: 0;
+        background-color: @primary-color;
+        padding: 0;
+        border: 0;
+        width: 65px;
+        height: 65px;
+        transition: background-color @transition-fast-ease;
+
+        &:hover {
+            background-color: white;
+
+            &::before,
+            &::after {
+                background-color: @primary-color;
+            }
+        }
+
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            width: 22px;
+            height: 10px;
+            background-color: white;
+        }
+
+        &::before {
+            top: 31px;
+            left: 50%;
+            transform: translateX(-50%) rotate(45deg);
+        }
+
+        &::after {
+            top: 22px;
+            left: 50%;
+            transform: translateX(-50%) rotate(-45deg);
+        }
+    }
+
+    .slick-prev {
+        left: 0;
+        opacity: 0;
+
+        &.show {
+            opacity: 1;
+        }
+    }
+
+    .slick-next {
+        right: 0;
+        transform: rotate(180deg);
+    }
+}
+
+.floatedAltTitle {
+    font-family: @heading-font;
+    text-transform: uppercase;
+}
+
+.floatedTitle {
+    font-size: 31px;
+    margin: 5px 0 40px;
+    max-width: @floated-content-maxwidth;
+
+    @media @query-min-smallDevice {
+        font-size: 56px;
+        margin: 5px 0 30px;
+    }
+
+    span {
+        @media @query-min-smallDevice {
+            display: block;
+        }
+    }
+}
+
+.listTitle {
+    text-transform: uppercase;
+    font-size: 24px;
+    margin: 5px 0;
+}
+
+.listText {
+    line-height: 1.5;
+    min-height: 72px;
+}
+
+.unwrap {
+    max-width: 100%;
+    width: 100%;
+    margin: 0;
+    padding-left: 0;
+    padding-right: 0;
+}

@@ -1,0 +1,20 @@
+.parallaxAnim {
+    opacity: 0;
+    transform: translateY(40%);
+    transition: opacity @transition-medium-ease, transform @transition-slow-ease;
+
+    &.animated {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.parallax {
+    &__item {
+        .parallaxAnim();
+    }
+
+    &__single {
+        .parallaxAnim();
+    }
+}

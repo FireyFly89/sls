@@ -1,0 +1,92 @@
+.get-in-touch {
+    position: relative;
+    margin-top: 40px;
+
+    @media @query-min-smallDevice {
+        margin-top: 150px;
+    }
+
+    &::before {
+        content: "";
+        .innerBox(@zindex: 1);
+        background-color: @primary-color;
+        transform: translateY(15%);
+        transition: transform @transition-lazy-ease;
+    }
+
+    &.animated::before {
+        transform: translateY(0);
+    }
+
+    &__wrap {
+        .wrapper();
+        position: relative;
+        z-index: 2;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        color: white;
+    }
+
+    &__content {
+        position: relative;
+        background-color: @dark-color;
+        flex-basis: calc(100% + 60px);
+        width: calc(100% + 60px);
+        padding: 75px 30px;
+        margin: 0 -30px;
+
+        @media @query-min-smallDevice {
+            top: -95px;
+            left: -45px;
+            flex-basis: 49%;
+            width: 49%;
+            padding: 95px 50px;
+            margin: 0 0 -65px;
+        }
+
+        @media @query-min-largeDevice {
+            left: -95px;
+            padding: 95px 95px;
+        }
+
+        h2 {
+            font-size: 52px;
+
+            @media @query-min-smallDevice {
+                font-size: 72px;
+            }
+
+            @media @query-min-largeDevice {
+                max-width: 80%;
+            }
+        }
+    }
+
+    &__form {
+        flex-basis: 100%;
+        padding-top: 15px;
+        padding-bottom: 15px;
+
+        @media @query-min-smallDevice {
+            flex-basis: 34%;
+            padding-top: 40px;
+            padding-bottom: 0;
+        }
+
+        @media @query-min-largeDevice {
+            flex-basis: 31%;
+        }
+
+        > p {
+            font-size: 16px;
+            line-height: 1.4;
+            margin-bottom: 30px;
+        }
+
+        input[type="text"],
+        input[type="email"] {
+            .formInput();
+        }
+    }
+}

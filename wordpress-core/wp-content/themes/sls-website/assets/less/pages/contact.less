@@ -1,0 +1,86 @@
+.contact {
+    background-color: @dark-color;
+    color: white;
+    padding-top: 55px;
+    padding-bottom: 50px;
+
+    &__wrap {
+        .wrapper();
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &__content {
+        flex: 1;
+
+        h2 {
+            font-size: 72px;
+            max-width: 245px;
+            color: @primary-color;
+            margin-bottom: 35px;
+        }
+
+        h4 {
+            text-transform: uppercase;
+            line-height: 1.5;
+            margin-bottom: 25px;
+        }
+
+        p {
+            margin-top: 40px;
+            font-family: @heading-font;
+
+            a {
+                color: white;
+
+                &:hover {
+                    color: @primary-color
+                }
+            }
+        }
+    }
+
+    &__form {
+        flex-basis: 100%;
+        margin-top: 15px;
+
+        @media @query-min-smallDevice {
+            flex-basis: 40%;
+        }
+
+        > p {
+            margin-bottom: 0;
+
+            @media @query-min-smallDevice {
+                font-size: 20px;
+            }
+        }
+
+        form p {
+            margin: 0;
+        }
+
+        input:not([type="submit"]) {
+            .formInput(@padding:20px 25px;);
+            margin-top: 15px;
+        }
+
+        textarea {
+            .formInput(@padding:20px 25px;);
+            resize: none;
+            height: 315px;
+            margin-top: 15px;
+        }
+
+        input[type="submit"] {
+            background-color: @primary-color;
+            width: 100%;
+            margin-top: 20px;
+
+            &:hover {
+                color: @primary-color;
+                background-color: white;
+            }
+        }
+    }
+}

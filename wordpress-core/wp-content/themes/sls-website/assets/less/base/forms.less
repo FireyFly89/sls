@@ -1,0 +1,63 @@
+.form {
+    &__input {
+        &__hint {
+            display: inline-block;
+            font-size: 12px;
+            line-height: 1.4;
+            padding-left: 10px;
+            margin-top: 10px;
+        }
+
+        &__file {
+            display: block;
+            padding: 20px 25px;
+            margin-top: 15px;
+            background-color: white;
+            color: #757575;
+            width: 100%;
+            cursor: pointer;
+        }
+    }
+}
+
+input[type="submit"] {
+    padding: 8px 45px;
+    text-transform: uppercase;
+    font-family: @cta-font;
+    font-size: 17px;
+    transition: color @transition-fast-ease, transform @transition-fast-ease, background-color @transition-fast-ease;
+    border: 0;
+    color: white;
+    background-color: @dark-color;
+    cursor: pointer;
+
+    &:hover {
+        transform: scale(1.03);
+        background-color: white;
+        color: @dark-color;
+    }
+
+    @media @query-min-smallDevice {
+        padding: 20px 35px;
+        font-size: 24px;
+    }
+}
+
+form {
+    span.wpcf7-not-valid-tip {
+        font-size: 13px;
+        line-height: 1;
+        margin-top: 5px;
+    }
+
+    div.wpcf7-response-output {
+        margin: 0;
+        padding: 15px 20px;
+        border-color: @primary-color;
+        line-height: 1.5;
+    }
+
+    input[type="file"] {
+        display: none;
+    }
+}

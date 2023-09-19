@@ -1,0 +1,28 @@
+{
+    "name": "sls_website",
+    "version": "1.0.0",
+    "description": "SLS Website",
+    "main": "index.js",
+    "dependencies": {
+        "less": "^3.9.0"
+    },
+    "devDependencies": {
+        "autoprefixer": "^9.8.6",
+        "postcss-cli-simple": "^3.1.0",
+        "cssnano": "^4.1.10"
+    },
+    "scripts": {
+        "init": "bash ./bin/less_watcher.sh",
+        "compile": "bash ./bin/less_compile.sh"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://gitlab.com/FireyFly89/sls-website.git"
+    },
+    "author": "Krisztián Lakatos",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://gitlab.com/FireyFly89/sls-website/issues"
+    },
+    "homepage": "https://gitlab.com/FireyFly89/sls-website#readme"
+}

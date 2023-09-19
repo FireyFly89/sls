@@ -1,0 +1,102 @@
+.services {
+    .wrapper();
+    padding-top: @section-padding-top;
+    padding-bottom: @section-padding-bottom;
+
+    &--page {
+        .wrapper();
+        padding-top: 40px;
+
+        @media @query-min-smallDevice {
+            padding-top: 55px;
+
+            .services__item {
+                &:nth-child(even) {
+                    margin-left: @floated-img-offset;
+                    margin-right: 0;
+
+                    .services__content {
+                        padding-left: 35%;
+                    }
+
+                    .services__item__img {
+                        left: 0;
+                        right: unset;
+                        order: -1;
+                        margin-left: -@floated-img-offset;
+                    }
+                }
+
+                &:nth-child(odd) {
+                    margin-right: @floated-img-offset;
+                    margin-left: 0;
+
+                    .services__content {
+                        padding-left: 35px;
+                    }
+
+                    .services__item__img {
+                        left: unset;
+                        right: 0;
+                        order: 2;
+                        margin-right: -@floated-img-offset;
+                    }
+                }
+            }
+        }
+    }
+
+    &__item {
+        .floatedItem();
+
+        @media @query-min-smallDevice {
+            &:nth-child(odd) {
+                margin-left: @floated-img-offset;
+                margin-right: 0;
+
+                .services__content {
+                    padding-left: 35%;
+                }
+
+                .services__item__img {
+                    right: unset;
+                    left: 0;
+                    order: -1;
+                    margin-left: -@floated-img-offset;
+                    margin-right: 0;
+                }
+            }
+        }
+
+        &__category {
+            .floatedAltTitle();
+        }
+
+        &__title {
+            .floatedTitle();
+        }
+
+        &__img {
+            .floatedImg(@height: @floated-img-height, @width: 48%, @min-width: @floated-img-width);
+        }
+    }
+
+    &__content {
+        .floatedContent();
+    }
+
+    &__cta {
+        text-align: right;
+
+        .btn--primary {
+            width: 100%;
+            text-align: center;
+            padding: 20px 70px;
+            font-size: 24px;
+
+            @media @query-min-smallDevice {
+                width: auto;
+            }
+        }
+    }
+}
